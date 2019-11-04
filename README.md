@@ -1,7 +1,7 @@
 # gulzadeJS
 
 ## ClassWorks
-[CW1 -> Yuvarlak Diyagram](https://gulzade.github.io/gulzadeJS/ClassWork_Part1.html)
+[CW1 -> Yuvarlak Diyagram](https://gulzade.github.io/gulzadeJS/Work1%20(1).PNG)
 
 
 [CW2.1 -> Sayı Artırma](https://gulzade.github.io/gulzadeJS/ClassWork_Part1.html)
