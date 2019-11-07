@@ -8,6 +8,9 @@
 [CW2.2 -> Sayı Artırma](https://gulzade.github.io/gulzadeJS/ClassWork_Part2.html) 
 
 
+[CW3->  Objects and Arrays](https://gulzade.github.io/gulzadeJS/gulzadeCW3.PNG)
+
+
 [CW4-> Promise & Fetch](https://gulzade.github.io/gulzadeJS/ClassWork4/Courses.html)
 
 
@@ -16,3 +19,4 @@
 
 ## HomeWorks
 [HW1-Possion Table]()
+[HW2-Possion Table]()
