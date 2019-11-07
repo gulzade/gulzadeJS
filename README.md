@@ -17,7 +17,11 @@
 [CW5 -> Inspector](https://gulzade.github.io/gulzadeJS/ClassWork5/work/EloquentJS.html)
 
 
+[CW6 -> File Operations](https://gulzade.github.io/gulzadeJS/ClassWork6/cw6.html)
+
+
 ## HomeWorks
 [HW1-Possion Table ]()
 
 [HW2]()
+
