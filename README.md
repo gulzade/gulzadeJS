@@ -19,7 +19,7 @@
 
 [CW6 -> File Operations](https://gulzade.github.io/gulzadeJS/ClassWork6/cw6.html)
 
-[CW7 -> Timing](https://gulzade.github.io/gulzadeJS/ClassWork7/timing.html  )
+[CW7 -> Timing](https://gulzade.github.io/gulzadeJS/ClassWork7/timing.html)
 
 
 ## HomeWorks
