@@ -1,0 +1,83 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="Database.js"></script>
+    <title>Array and Map </title>
+  <script>
+  const url = "https://maeyler.github.io/JS/data/";
+  const array = [], map = new Map();
+//hem map olarak hem array olarak bakıcaz.
+  function readData(file) {
+      console.log("readData "+file);
+      fetch(url+file)
+          .then(r => r.text(), console.log)
+          .then(addStudents, console.log);
+  }
+
+  function parseStudent(line) {
+    let [id, name, gpa, ...L] = line.split('\t')
+    let std = new Student(id, name, gpa)
+    std.courses = L; return std
+}
+  function addStudents(txt) {
+      let msg = "\nData contains ";
+      msg += txt.length+" chars, ";
+      let a = txt.split("\n");
+      msg += a.length+" lines \n";
+      for (let s of a) {
+        let std = parseStudent(s);
+        array.push(std.id); map.set(std.id,std);
+      }
+      msg += array.length+" students, "
+      out.innerText += msg
+  }
+  function RandomNumber() {
+      let toplamArray = 0,toplamMap = 0,sayacArray=0,sayacMap=0; 
+      
+      for (let i = 0; i < 10000; i++) {
+        let id = "21517"+String(Math.random()).substring(2,6);
+        let arrayTime = performance.now();
+        if(array.includes(id)){ //array için 
+            sayacArray++;  //kaç tane bulduğum
+			
+        }
+        toplamArray += performance.now() - arrayTime;
+        let mapTime = performance.now();
+        if(map.has(id)){ //map için 
+            sayacMap++; //kaç tane bulduğum
+        }
+        toplamMap += performance.now()-mapTime; 
+      }
+      let s = "\nArray : "+toplamArray.toPrecision(3)+" msec bulunan :"+sayacArray
+      +"\nMap : "+toplamMap.toPrecision(3)+" msec bulunan :"+sayacMap+"\n---------------------------\n";
+      out.innerText += "\n"+s; 
+	  
+ 
+  }
+  </script>
+</head>
+
+<body style ="background-color:black; color:white;">
+<h2 id="title">Array and Map</h2>
+
+<button style="background-color:yellow;" onClick='RandomNumber()'>Compare</button>
+
+<hr />
+<b>RESULT</b>
+<p id=out></p>
+
+<b style="color:black;">Sample code</b>
+<pre id=sample></pre>
+<hr />
+
+<script>
+    readData("Students.txt");
+    title.innerText = document.title;
+
+  //  sample.innerText = RandomNumber+"\n"+readData;
+</script>
+
+</body>
+</html>
+
