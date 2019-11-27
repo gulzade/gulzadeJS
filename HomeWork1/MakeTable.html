@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)file:///C:/Users/g%C3%BClzade/Desktop/Make%20a%20Table%20(1).html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" sizes="192x192" href="https://maeyler.github.io/JS/images/JS.png">
+    <title>Make a Table </title>
+
+  <style>
+    body { max-width: 440px; }
+    #sample { overflow-x: auto; }
+    table { border-collapse: collapse; }
+    th { color: blue; padding: 5px 5px; }
+    td { 
+        border: 1px solid blue; 
+        padding: 5px 5px; 
+        text-align: center; 
+        position: relative;
+    }
+    td:hover .tip {
+        visibility: visible;
+    }
+    td .tip {
+        visibility: hidden;
+        font-size: small;
+        background-color: blue;
+        color: white;
+        text-align: center;
+        padding: 5px 5px;
+        position: absolute;
+        left: 5px; 
+        top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+<center>
+<h2 id="title">Make a Table</h2>
+
+
+<table id="tablo"><tbody><tr><th></th><th>𝝺 = 0.5</th><th>𝝺 = 1</th><th>𝝺 = 1.5</th><th>𝝺 = 2</th><th>𝝺 = 2.5</th><th>𝝺 = 3</th></tr><tr><th>x = 0</th><td>0.6065</td><td>0.3679</td><td>0.2231</td><td>0.1353</td><td>0.0821</td><td>0.0498</td></tr><tr><th>x = 1</th><td>0.3033</td><td>0.3679</td><td>0.3347</td><td>0.2706</td><td>0.2053</td><td>0.1494</td></tr><tr><th>x = 2</th><td>0.0758</td><td>0.1840</td><td>0.2510</td><td>0.2706</td><td>0.2566</td><td>0.2241</td></tr><tr><th>x = 3</th><td>0.0126</td><td>0.0613</td><td>0.1255</td><td>0.1804</td><td>0.2138</td><td>0.2241</td></tr><tr><th>x = 4</th><td>0.0016</td><td>0.0153</td><td>0.0471</td><td>0.0902</td><td>0.1336</td><td>0.1681</td></tr><tr><th>x = 5</th><td>0.0002</td><td>0.0031</td><td>0.0141</td><td>0.0361</td><td>0.0668</td><td>0.1009</td></tr><tr><th>x = 6</th><td>0.0000</td><td>0.0005</td><td>0.0035</td><td>0.0120</td><td>0.0278</td><td>0.0505</td></tr><tr><th>x = 7</th><td>0.0000</td><td>0.0001</td><td>0.0008</td><td>0.0034</td><td>0.0099</td><td>0.0216</td></tr><tr><th>x = 8</th><td>0.0000</td><td>0.0000</td><td>0.0002</td><td>0.0008</td><td>0.0031</td><td>0.0081</td></tr></tbody></table>
+
+
+</center>
+
+<b>Sample code</b>
+<pre id="sample">let d=[]; const L = [0.5, 1, 1.5, 2, 2.5, 3];<br>    let row = "&lt;th&gt;&lt;/th&gt;";<br>    for (let j = 0.5; j &lt;= 3; j=j+0.5) <br>        row += "&lt;th&gt;"+j+"&lt;/th&gt;";<br>    let text = "&lt;tr&gt;"+row+"&lt;/tr&gt;";<br>    for (let i = 0; i &lt;= 8; i++) {<br>       row = "&lt;th&gt;"+i+"&lt;/th&gt;";<br>       for (let j = 0; j &lt;= 5; j++) {<br>          let p = 5*(i-1)+j;<br>          let s = "&lt;span class=tip&gt;C"+p+"&lt;/span&gt;"<br>     if(i==0){<br> 	 row += "&lt;td&gt;"+ Math.exp(-L[j]).toFixed(4) +"&lt;/td&gt;";<br>      }<br>       d[j]=(Math.exp(-L[j]).toFixed(4));<br>    }<br>    else{<br>    deneme(d,i,j);<br>        }<br>    }<br>  text +="&lt;tr&gt;"+row+"&lt;/tr&gt;"; <br>}<br> tablo.innerHTML = text;    <br> <br> function deneme([],i,j){      <br>   row += "&lt;/td&gt;"+ ((d[j]*L[j])/i).toFixed(4)+"&lt;/td&gt;"; <br>   d[j]=((d[j]*L[j])/i).toFixed(4); <br> }<br></pre>
+<hr>
+<script>
+"use strict";
+//June 8, 2018 MAE -- basis for 
+//https://maeyler.github.io/Visual-Mujam/
+//
+	let d=[]; const L = [0.5, 1, 1.5, 2, 2.5, 3];
+    let row = "<th></th>";
+    for (let j = 0.5; j <=3; j=j+0.5){
+        row += "<th>"+"𝝺 = "+j+"</th>";
+		}
+    let text = "<tr>"+row+"</tr>";
+    for (let i = 0; i <= 8; i++) {
+       row = "<th>"+"x = "+i+"</th>";
+       for (let j = 0; j <= 5; j++) {
+          let p = 5*(i-1)+j;	
+		
+          let s = "<span class=tip>C"+p+"</span>"
+		  if(i==0){		
+		    
+			row += "<td>"+ Math.exp(-L[j]).toFixed(4) +"</td>";
+			d[j]=(Math.exp(-L[j]).toFixed(4));
+		  }
+		else{
+		 
+		  //row += "<td>"+ ((d[j]*L[j])/i).toFixed(4)+"</td>";
+		  //d[j]=((d[j]*L[j])/i).toFixed(4);
+		  func(d,i,j);
+		 } 
+		  
+         
+       }
+       text += "<tr>"+row+"</tr>";
+    }
+
+    tablo.innerHTML = text; 
+
+
+ function func([],i,j){
+		row += "<td>"+ ((d[j]*L[j])/i).toFixed(4)+"</td>";
+		d[j]=((d[j]*L[j])/i).toFixed(4);
+ }   
+ 
+
+
+ 
+</script>
+
+
+ 
+
+</body></html>
