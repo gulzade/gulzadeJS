@@ -19,11 +19,14 @@
 
 [CW6 -> File Operations](https://gulzade.github.io/gulzadeJS/ClassWork6/cw6.html)
 
-[CW7 -> Timing](https://gulzade.github.io/gulzadeJS/ClassWork7/timing.html)
+
+[CW8 -> DOM and PWA](https://gulzade.github.io/gulzadeJS)
 
 
 ## HomeWorks
-[HW1-Possion Table ]()
+[HW1-Possion Table ](https://gulzade.github.io/gulzadeJS/HomeWork1/MakeTable.html)
 
-[HW2]()
+[HW2-Student Database](https://gulzade.github.io/gulzadeJS/HomeWork2/database.html)
+
+[HW3-Animation](https://gulzade.github.io/gulzadeJS/Homework3/HW3.html)
 
