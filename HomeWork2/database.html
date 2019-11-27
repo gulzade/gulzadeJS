@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title> Students Database </title>
+    <script src="database.js"></script>
+
+</head>
+
+<script>
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}   
+
+
+function studentCourses(){
+    output1.innerText=""
+	let stu=getStudent(StdId.value)
+    if(stu!=-1){
+    
+        output1.innerText=stu.name+"'s"+" Student Courses -> "+ stu.courses.toString();
+    }
+    
+    if(!find){
+        clearAll()
+       output1.innerText="Student Not Found";
+    }
+}
+function clearAll(){
+ StdId.vslue=""
+ gpaİnput.value=""
+ stdCourseInp.value=""
+ roomInput.value=""
+ CourseCodeInp.value=""
+}
+function getStudent(givenId){ //böyle bir id var mı? //Do you have such an id?
+    if(students.has(givenId))
+        return students.get(givenId) //varsa getir get ile
+    return -1
+}
+
+function randomStd(){ //Random student
+    let keys = Array.from( students.keys() ); //keyleri bir dizi yapıyoruz //creating a set of keys
+    let randid=keys[getRandomInt(keys.length)] //randomly assigned number -id
+    
+	output1.innerText="Random Student :  "+students.get(randid.toString()).name+ "   "+ students.get(randid.toString()).id;
+  
+
+}
+
+function findGpa(){
+  output1.innerText=""
+  
+    if(gpaİnput.value){
+
+        let counter=0
+        for(stu of students.values()){
+            if(stu.gpa>gpaİnput.value)counter++
+        }
+    output1.innerText= "number of student who has GPA above "+gpaİnput.value+"  is "+counter
+    clearAll()
+}
+}
+function coursesInRoom(){ //Course list for a given exam room
+   output1.innerText="" 
+   let counter=0
+   for (course of courses.values()){
+    for(room of course.rooms){
+        if (room == roomInput.value){		
+			output1.innerHTML +=  course.name+"  "+"<br>" ;
+			counter++;
+        }
+    }
+
+ }
+return counter
+}
+function NumOfcoursesInRoom(){
+    counter=coursesInRoom()
+    output1.innerText="Number of courses in "+roomInput.value+"  is  "+counter
+}
+function ExamSchedule(){// Exam schedule for a given student
+    output1.innerText=""
+    let e
+    stu=getStudent(StdId.value) 
+    for(course of stu.courses){
+       e=courses.get(course)
+       output1.innerHTML +=  e.name+"  "+e.time+"  "+ e.date+"<br>" ;
+    }
+}
+function printStudentList(){//students who take given course
+    output1.innerText=""
+
+    for (stu of students.values()){
+        for (course of stu.courses){
+           if(stdCourseInp.value ==course)
+            output1.innerHTML +=  stu.id+"  "+stu.name+"<br>" ;
+    }
+
+}
+}
+function studentNumTakingCourse(){
+    counter=0
+    for (stu of students.values()){
+        for (c of stu.courses){
+           if(CourseCodeInp.value ==c)
+               counter++
+       }
+
+   }
+   output1.innerText="Number of student taking "+CourseCodeInp.value+" is "+counter
+}
+</script>
+
+<body>
+    <h2 id=title>
+
+    </h2>
+
+  <body>
+
+
+
+<button onclick="randomStd()">Random</button>
+<button onclick="clearAll()">Clear</button>
+<hr>
+
+<p>Student id: 
+<input id="StdId" type=text value="116691862">
+<button onclick="studentCourses(value)">Lessons</button>
+<button onclick="ExamSchedule(value)">Exam Schedule</button>
+</p>
+
+
+
+<p>Number of students above a given GPA:     
+<input id="gpaİnput" type="text" onchange="findGpa(value)">
+</p>
+
+
+
+<p>Student list taking a given course:   
+<input id="stdCourseInp"type="text" onchange="printStudentList()" >
+</p>
+
+
+<p>Course list for a given exam room:   
+<input id="roomInput"type="text" value="B1004">
+<button onclick="coursesInRoom()">Courses in this room</button>
+<button onclick="NumOfcoursesInRoom()">Number of Courses in this room</button>
+</p>
+
+
+
+
+<p>Course code: 
+<input id="CourseCodeInp"type="text" value="BGM 539">
+<button onclick="studentNumTakingCourse()">Number of student taking this course</button>
+</p>
+
+<p id="out" onclick="doClick(event)"></p>
+
+
+
+    <hr >
+    <h2> Result</h2>
+    <pre id=output1></pre>
+
+    <script>
+        title.innerText = document.title;
+        database=new Database()
+        database.read()
+        let students=database.students
+        let courses=database.courses
+
+    </script>
+
+</body>
+</html>
