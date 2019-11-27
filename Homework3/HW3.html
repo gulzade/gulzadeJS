@@ -1,0 +1,113 @@
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Animation </title>
+
+  <style>
+
+body {
+  background: url("snow.gif");
+  
+}
+.animation{
+  width : 100%;
+  padding : 20px;
+  box-sizing : border-box;
+  margin: 5px auto;
+  
+  }
+
+ 
+.bulut{
+
+transform :translate(100px,10px);
+
+}
+.bulut:nth-child(2){
+
+transform :translate(500px,-200px);
+
+
+}
+.bulut:nth-child(3){
+
+transform :translate(1000px,-400px);
+
+}
+
+.snowman{
+transform :translate(500px,-500px);
+
+
+}
+
+	
+  </style>
+</head>
+<body>
+
+<div class = "animation">
+
+   <div class="buyukBulut"> 
+   <div class="bulut"> <img src = "cloud.png" id = "bulut"></div>
+   <div class="bulut"> <img src = "cloud.png" id = "bulut"></div>
+   <div class="bulut"> <img src = "cloud.png" id = "bulut"></div>
+   </div>
+
+
+	<div class="snowman"> 
+   <div class="snowman"> <img src = "olaf.png" id = "snowman"></div>
+   </div>
+   
+ </div> 
+<script>
+
+window.onload = function() { 
+
+let i;
+for(i=0;i<3;i++){
+ 
+	    document.getElementsByClassName("buyukBulut")[0].animate([
+        // keyframes
+		
+        { transform: 'scale(1.05,1.05)' },
+		{ transform: 'scale(1,1)' },
+		{ transform: 'scale(1.05,1.05)' },
+	
+        
+		
+        ], { 
+        // timing options
+		
+        duration: 3000,
+        iterations: Infinity,
+	
+    })
+	
+	 document.getElementsByClassName("snowman")[0].animate([
+        // keyframes
+		{transform:'rotate(40deg)'},
+		{ transform: 'rotate(-40deg)' },
+		{ transform: 'rotate(40deg)' },
+	
+       		
+        ], { 
+        // timing options
+		
+        duration: 3000,
+        iterations: Infinity,
+	
+    })
+	
+	
+	}
+
+
+};
+
+
+
+</script>
+ </body>
+</html>
