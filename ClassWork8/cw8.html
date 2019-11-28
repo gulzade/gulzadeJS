@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="manifest" href="manifest.json">
+    <title>  Patient system  </title>
+	<hr />
+Ref:  
+ <a href="https://gulzade.github.io/gulzadeJS/Homework3/HW3.html" target="ExternalDocument">HW3-Animation</a>
+<p> <a href="https://gulzade.github.io/gulzadeJS/ClassWork8/cw8.html" target="ExternalDocument">CW8</a> </p>
+<p> <a href="https://gulzade.github.io/gulzadeJS/" target="ExternalDocument">github</a> </p>
+<hr />
+</head>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('https://gulzade.github.io/gulzadeJS/ClassWork8/cw8.html')
+        .then((reg) => { console.log('SW Registered', reg) })
+        .catch(console.log)
+    }
+  </script>
+<script>
+"use strict";
+  let patients = [
+	 ["Name surname","SıraNo","Bolum"],
+    ["ali sak ",  12,"ortodonti"],
+    [ "yasemin geçkalan",25,  "nöroloji"],
+    [ "özgür kara ", 8, "pedagoji"],
+    [ "nalan coş ",  20, "dahiliye"],
+    ["yaren yıldırım", 26, "kardiyoloji"],
+   
+  ];
+  
+  function makeTablo(array) {
+ let text=""
+ let rowCount=array.length
+ let columCount=array[0].length
+ // columalrın isimleri 
+ text+="<tr>"
+   for (let j = 0; j < columCount; j++) {
+          text+="<th>"+array[0][j]+"</th>"
+       }
+  text+="</tr>"
+// dataları okuma
+ for ( let i = 1; i < rowCount; i++) {
+       text+="<tr>"
+      for ( let j = 0; j < columCount; j++) {
+          text+="<td>"+array[i][j]+"</td>"
+       }
+       text+="</tr>"
+ }
+tablo.innerHTML = "<table border=1>"+ text +"</table>"
+}
+ 
+
+</script>
+
+<style>
+  
+    table { border-collapse: collapse; }
+    th { color: blue; padding: 5px 5px; }
+    td { 
+        border: 1px solid blue; 
+        padding: 5px 5px; 
+        text-align: center; 
+    }
+    td:hover .tip { visibility: visible; }
+    .tip {
+        visibility: hidden;
+        font-size: small;
+        background-color: blue;
+        color: white;
+        text-align: center;
+        padding: 5px 5px;
+        position: absolute;
+    }
+
+
+</style>
+
+<body>
+<center>
+<h2 id=title></h2>
+
+
+
+<table id="tablo"></table>
+
+
+<hr />
+<b>Sample code</b>
+<pre id=sample></pre>
+
+
+<script>
+    title.innerText = document.title;
+    sample.innerText = makeTablo.toString();
+    makeTablo(patients)
+</script>
+</body>
+</html>
