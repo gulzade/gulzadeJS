@@ -20,7 +20,7 @@
 [CW6 -> File Operations](https://gulzade.github.io/gulzadeJS/ClassWork6/cw6.html)
 
 
-[CW8 -> DOM and PWA](https://gulzade.github.io/gulzadeJS)
+[CW8 -> DOM and PWA](https://gulzade.github.io/gulzadeJS/ClassWork8/cw8.html)
 
 
 ## HomeWorks
