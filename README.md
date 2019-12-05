@@ -24,7 +24,7 @@
 
 
 
-[CW9 -> External IP](https://gulzade.github.io/gulzadeJS/ClassWork9/cw9.html)
+[CW9 -> External IP](https://gulzade.github.io/gulzadeJS/ClassWork9/CW9.html)
 
 ## HomeWorks
 [HW1-Possion Table ](https://gulzade.github.io/gulzadeJS/HomeWork1/MakeTable.html)
