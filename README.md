@@ -23,6 +23,9 @@
 [CW8 -> DOM and PWA](https://gulzade.github.io/gulzadeJS/ClassWork8/cw8.html)
 
 
+
+[CW9 -> External IP](https://gulzade.github.io/gulzadeJS/ClassWork9/cw9.html)
+
 ## HomeWorks
 [HW1-Possion Table ](https://gulzade.github.io/gulzadeJS/HomeWork1/MakeTable.html)
 
