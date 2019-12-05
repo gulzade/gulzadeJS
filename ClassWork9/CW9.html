@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://maeyler.github.io/305/work/GitHub_Users.html -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" sizes="192x192" href="https://maeyler.github.io/JS/images/JS.png">
+    <title>GitHub Users</title>
+
+  <style>
+    body {
+        max-width: 500px;
+    }
+    img {
+        padding-right: 12px; 
+        width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2 id="title">GitHub Users</h2>
+<input type="text" id="usr" value="maeyler" onchange="readUser()">
+<p id="out"><img src="./GitHub Users_files/1072473" align="left">Hakan Dilek, Erlangen, Germany<br><a href="https://github.com/hakandilek" target="NewTab">github.com/hakandilek</a><br>103 repos<br><br>2019-02-angular-workshop-erlangen, 2048, angular-github, angular-strap, asciidoctor-diagram, asciidoctor-mathematical, Base64, Cambridge, CanvasCameraPlugin, cse100, cse470, CSE470-2015, cse495, currying-java, cwise, cyripto_trader, deep-learning-keras-tensorflow, DefinitelyTyped, dilek.me, django-blueprint, docker-asciidoctor, docker-cloud-cli, docker-stacks, drop-dash, dropwizard-archetype, dropwizard-jobs, dw-shiro-bundle, eclipse-templates, embed-influxDB, fiber</p>
+
+<p>Ref: <a href="https://developer.github.com/v3/#rate-limiting" target="NewTab">GitHub Developer</a>
+</p>
+<b>Sample code</b>
+<pre id=sample></pre>
+
+<script>
+"use strict";
+const NL = "\n", BR = "<BR>", 
+    URL = "https://api.github.com/users/"
+function error(t) {
+    out.style.color = 'red'
+    out.innerText = t; console.log(t)
+}
+function listRepos(b) {
+    if (b.length) 
+      out.innerHTML += 
+        b.map(x => x.name).join(", ")
+}
+function userData(u) {
+    if (!u || !u.login) {
+      error(usr.value+' not found')
+      return
+    } 
+    //u.login is the same as usr.value
+    out.style.color = ''
+    out.innerHTML = ''
+    //start with a tiny image
+    let i = document.createElement("img")
+    i.src = u.avatar_url
+    out.appendChild(i)
+	
+	//add link to GitHub 
+    let h = "\ngithub.com/"+u.login
+    let a = document.createElement("a")
+    a.href = "https://"+h
+    a.target = "NewTab"
+    a.innerText = h
+    out.appendChild(a)
+	
+	
+	
+    //add name and location
+    let s = (u.name? u.name : u.login)
+    if (u.location) s += ", "+u.location
+   // out.innerHTML += s+BR; console.log(s)
+	let a2 = document.createElement("a2") 
+	a2.innerText = "\n"+s+"\n"
+	out.appendChild(a2)
+	
+	//add company
+     let s4 = (u.company? u.company: u.login)
+    if (u.company) s4 =u.company
+	let a5 = document.createElement("a5") 
+	a5.style.color = "green";
+	a5.innerText = "\n"+s4+"\n"
+	out.appendChild(a5)
+	
+	//add id
+	 let s2 = (u.id? u.id : u.login)
+    if (u.id) s2 = u.id
+	let a3 = document.createElement("a3") 
+	a3.style.color = "green";
+	a3.innerText = "id: "+s2+"  "
+	out.appendChild(a3)
+	
+	//add type
+	 let s5 = (u.type? u.type : u.login)
+    if (u.type) s5 = u.type
+	let a6 = document.createElement("a6") 
+	a6.style.color = "green";
+	a6.innerText = "type:  "+s5+"\n\n"
+	out.appendChild(a6)
+	 
+	 //add repo
+     let s3 = (u.blog? u.blog : u.login)
+    if (u.blog) s3 =u.blog
+	let a4 = document.createElement("a4") 
+	a4.style.color = "blue";
+	a4.innerText = s3+"\n\n"
+	out.appendChild(a4)
+	
+  
+ 
+}
+function readUser() {
+    fetch(URL+usr.value)
+      .then(r => r.ok? r.json() : null) 
+      .then(userData).catch(error)
+}
+
+    title.innerText = document.title
+ sample.innerText =  
+      NL+ userData +NL
+   
+    out.innerText = "Reading data"
+    readUser()
+</script>
+
+
+
+</body></html>
