@@ -1,0 +1,14 @@
+{
+  "name": "Gülzade Karataş",
+  "description": "Advanced Programming Classwork",
+  "short_name": "gulzadeJS",
+  "start_url": "gulzadeJS/index.html",
+  "background_color": "cyan",
+  "icons": [
+    {
+      "src": "JS.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
