@@ -23,7 +23,7 @@
 [CW7 -> Map Array Compare](https://gulzade.github.io/gulzadeJS/ClassWork7/timing.html)
 
 
-[CW8 -> DOM and PWA](https://gulzade.github.io/gulzadeJS/ClassWork8/cw8.html)
+[CW8 -> DOM and PWA](https://gulzade.github.io/gulzadeJS/cw8.html)
 
 
 
