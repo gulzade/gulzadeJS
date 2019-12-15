@@ -5,7 +5,7 @@
 
 
 [CW2.1 -> Sayı Artırma](https://gulzade.github.io/gulzadeJS/ClassWork_Part1.html)
-[CW2.2 -> Sayı Artırma](https://gulzade.github.io/gulzadeJS/ClassWork_part2.html) 
+[CW2.2 -> Convert to C to F and F to C](https://gulzade.github.io/gulzadeJS/ClassWork_part2.html) 
 
 
 [CW3->  Objects and Arrays](https://gulzade.github.io/gulzadeJS/gulzadeCW3.PNG)
