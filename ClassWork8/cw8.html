@@ -6,21 +6,8 @@
     <meta name="viewport" content="width=device-width">
     <link rel="manifest" href="manifest.json">
     <title>  Patient system  </title>
-	<hr />
-Ref:  
- <a href="https://gulzade.github.io/gulzadeJS/Homework3/HW3.html" target="ExternalDocument">HW3-Animation</a>
-<p> <a href="https://gulzade.github.io/gulzadeJS/ClassWork8/cw8.html" target="ExternalDocument">CW8</a> </p>
-<p> <a href="https://gulzade.github.io/gulzadeJS/" target="ExternalDocument">github</a> </p>
-<hr />
+	
 </head>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('https://gulzade.github.io/gulzadeJS/ClassWork8/cw8.html')
-        .then((reg) => { console.log('SW Registered', reg) })
-        .catch(console.log)
-    }
-  </script>
 <script>
 "use strict";
   let patients = [
@@ -58,45 +45,31 @@ tablo.innerHTML = "<table border=1>"+ text +"</table>"
 </script>
 
 <style>
-  
+    body { max-width: 540px; }
+    #sample { overflow-x: auto; }
     table { border-collapse: collapse; }
-    th { color: blue; padding: 5px 5px; }
+    th { color: black; padding: 5px 5px; }
     td { 
-        border: 1px solid blue; 
+        border: 5px solid yellow; 
         padding: 5px 5px; 
         text-align: center; 
+	position: relative;
     }
-    td:hover .tip { visibility: visible; }
-    .tip {
-        visibility: hidden;
-        font-size: small;
-        background-color: blue;
-        color: white;
-        text-align: center;
-        padding: 5px 5px;
-        position: absolute;
+    td:hover .tip {
+        visibility: visible;
     }
-
 
 </style>
-
+	
 <body>
 <center>
 <h2 id=title></h2>
 
-
-
 <table id="tablo"></table>
-
-
-<hr />
-<b>Sample code</b>
 <pre id=sample></pre>
-
-
 <script>
     title.innerText = document.title;
-    sample.innerText = makeTablo.toString();
+   // sample.innerText = makeTablo.toString();
     makeTablo(patients)
 </script>
 </body>
