@@ -6,7 +6,7 @@
     <title>Array and Map </title>
   <script>
   const url = "https://maeyler.github.io/JS/data/";
-  const array = [], map = new Map();
+  const array = [], map = new Map();  let id_std;
 //hem map olarak hem array olarak bakıcaz.
   function readData(file) {
       console.log("readData "+file);
@@ -46,10 +46,11 @@
         let mapTime = performance.now();
         if(map.has(id)){ //map için 
             sayacMap++; //kaç tane bulduğum
+		 id_std=id; //öğrencinin id
         }
         toplamMap += performance.now()-mapTime; 
       }
-      let s = "\nArray : "+toplamArray.toPrecision(3)+" msec bulunan :"+sayacArray
+      let s = "\nÖğrenci id:  "+id_std+"\nArray : "+toplamArray.toPrecision(3)+" msec bulunan :"+sayacArray
       +"\nMap : "+toplamMap.toPrecision(3)+" msec bulunan :"+sayacMap+"\n---------------------------\n";
       out.innerText += "\n"+s; 
 	  
