@@ -5,7 +5,7 @@
 
 
 [CW2.1 -> Sayı Artırma](https://gulzade.github.io/gulzadeJS/ClassWork_Part1.html)
-[CW2.2 -> Sayı Artırma](https://gulzade.github.io/gulzadeJS/ClassWork_Part2.html) 
+[CW2.2 -> Sayı Artırma](https://gulzade.github.io/gulzadeJS/ClassWork_part2.html) 
 
 
 [CW3->  Objects and Arrays](https://gulzade.github.io/gulzadeJS/gulzadeCW3.PNG)
