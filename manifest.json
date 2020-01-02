@@ -2,7 +2,7 @@
   "name": "Gülzade Karataş",
   "description": "Advanced Programming Classwork",
   "short_name": "gulzadeJS",
-  "start_url": "gulzadeJS/index.html",
+  "start_url": "/index.html",
   "background_color": "cyan",
   "icons": [
     {
